@@ -1,0 +1,14 @@
+JANGAN timpa public/js/api.js Anda. Tambahkan blok ini ke DALAM objek
+CuisineriaAPI (taruh di mana saja, misal setelah blok "Admin: produk"):
+
+    // ---- Slideshow beranda (publik) ----
+    getHeroSlides: () => apiRequest('/hero-slides'),
+
+    // ---- Admin: slideshow beranda ----
+    adminGetHeroSlides: (token) => apiRequest('/admin/hero-slides', { token }),
+    adminCreateHeroSlide: (token, formData) =>
+        apiRequest('/admin/hero-slides', { method: 'POST', body: formData, token }),
+    adminUpdateHeroSlide: (token, id, formData) =>
+        apiRequest(`/admin/hero-slides/${id}`, { method: 'PUT', body: formData, token }),
+    adminDeleteHeroSlide: (token, id) =>
+        apiRequest(`/admin/hero-slides/${id}`, { method: 'DELETE', token }),

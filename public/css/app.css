@@ -1,0 +1,32 @@
+/* Signature element: perforated "pickup ticket" edge used on order
+   confirmation & tracking cards — echoes a physical bakery order stub. */
+.ticket-edge {
+    position: relative;
+}
+.ticket-edge::before,
+.ticket-edge::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #F4EBDD;
+    border-radius: 999px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.ticket-edge::before { left: -12px; }
+.ticket-edge::after { right: -12px; }
+
+.ticket-divider {
+    border-top: 2px dashed rgba(46, 29, 18, 0.2);
+}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #B4622E;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
